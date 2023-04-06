@@ -5,55 +5,55 @@ pipeline {
         AWS_DEFAULT_REGION = 'ap-northeast-2'
         GIT_URL = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .GIT_URL'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .GIT_URL'
         ).trim()}"""
         GIT_TOKEN = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .GIT_TOKEN'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .GIT_TOKEN'
         ).trim()}"""
         TEAM_ID = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .TEAM_ID'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .TEAM_ID'
         ).trim()}"""
 	AWS_ACCESS_KEY_ID = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .AWS_ACCESS_KEY_ID'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .AWS_ACCESS_KEY_ID'
         ).trim()}"""
         AWS_SECRET_ACCESS_KEY = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .AWS_SECRET_ACCESS_KEY'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .AWS_SECRET_ACCESS_KEY'
         ).trim()}"""
         MATCH_PASSWORD = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .MATCH_PASSWORD'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .MATCH_PASSWORD'
         ).trim()}"""
         MATCH_KEYCHAIN_PASSWORD = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .MATCH_KEYCHAIN_PASSWORD'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .MATCH_KEYCHAIN_PASSWORD'
         ).trim()}"""
         APP_IDENTIFIER = """${sh(
             returnStdout: true ,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .APP_IDENTIFIER'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .APP_IDENTIFIER'
         ).trim()}"""
         APPLE_DEVELOPER_USERNAME = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .APPLE_DEVELOPER_USERNAME'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .APPLE_DEVELOPER_USERNAME'
         ).trim()}"""
         FASTLANE_PASSWORD = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .FASTLANE_PASSWORD'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id fastlane-secrets --query SecretString --output text | jq -r .FASTLANE_PASSWORD'
         ).trim()}"""
         APP_STORE_CONNECT_ISSUER_ID = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id app-store-connect-secret --query SecretString --output text | jq -r .APP_STORE_CONNECT_ISSUER_ID'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id app-store-connect-secret --query SecretString --output text | jq -r .APP_STORE_CONNECT_ISSUER_ID'
         ).trim()}"""
         KEY_ID = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id app-store-connect-secret --query SecretString --output text | jq -r .KEY_ID'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id app-store-connect-secret --query SecretString --output text | jq -r .KEY_ID'
         ).trim()}"""
         API_KEY = """${sh(
             returnStdout: true,
-            script: 'aws secretsmanager get-secret-value --secret-id app-store-connect-secret --query SecretString --output text | jq -r .API_KEY'
+            script: 'aws secretsmanager get-secret-value --region ap-northeast-2 --secret-id app-store-connect-secret --query SecretString --output text | jq -r .API_KEY'
         ).trim()}"""
     }
     stages { 
