@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         AWS_REGION = 'ap-northeast-2'
+        AWS_DEFAULT_REGION = 'ap-northeast-2'
         GIT_URL = """${sh(
             returnStdout: true,
             script: 'aws secretsmanager get-secret-value --secret-id fastlane-secrets --query SecretString --output text | jq -r .GIT_URL'
